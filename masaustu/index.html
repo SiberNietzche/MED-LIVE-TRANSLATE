@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MED LIVE TRANSLATE</title>
+    <link rel="icon" href="/src/simge.png" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- Metinler src/dil.ts sözlüğünden gelir: data-t (metin), data-t-html (biçimli), data-t-title (ipucu) -->
+    <!-- Başlık çubuğu (sürüklenebilir) -->
+    <header class="baslik" data-tauri-drag-region>
+      <div class="marka" data-tauri-drag-region>
+        <div class="logo" aria-hidden="true">
+          <img src="/src/amblem.png" alt="" width="70" height="34" data-tauri-drag-region />
+        </div>
+        <div data-tauri-drag-region>
+          <div class="marka-ad" data-tauri-drag-region>MED LIVE TRANSLATE</div>
+          <div class="marka-alt" data-tauri-drag-region><span data-t="marka.alt"></span> <span id="surum"></span></div>
+        </div>
+      </div>
+      <div class="baslik-sag">
+        <button class="etiketli-dugme secili" id="b-ana" data-t-title="b.ana.t">
+          <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h4.5v-6h4v6h4.5V10"/></svg>
+          <span data-t="b.ana"></span>
+        </button>
+        <button class="etiketli-dugme" id="b-oneriler" data-t-title="b.oneriler.t">
+          <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2.5"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+          <span data-t="b.oneriler"></span><i class="rozet-nokta" id="oneri-nokta" hidden></i>
+        </button>
+        <button class="etiketli-dugme" id="b-gecmis" data-t-title="b.gecmis.t">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5M12 7v5l3.5 2"/></svg>
+          <span data-t="b.gecmis"></span>
+        </button>
+        <button class="etiketli-dugme" id="b-kilavuz" data-t-title="b.kilavuz.t">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6M12 17h.01"/></svg>
+          <span data-t="b.kilavuz"></span>
+        </button>
+        <button class="etiketli-dugme" id="b-hakkinda" data-t-title="b.hakkinda.t">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg>
+          <span data-t="b.hakkinda"></span><i class="rozet-nokta" id="hk-nokta" hidden></i>
+        </button>
+        <button class="etiketli-dugme" id="b-mini" data-t-title="b.kontrol.t">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="2"/><path d="M7 7h.01M11 7h6M5 14h14M5 18h9"/></svg>
+          <span data-t="b.kontrol"></span>
+        </button>
+        <button class="etiketli-dugme" id="b-ayarlar" data-t-title="b.ayarlar.t">
+          <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+          <span data-t="b.ayarlar"></span>
+        </button>
+        <span class="ayirac"></span>
+        <button class="pencere-dugme" id="b-kucult" data-t-title="p.kucult"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+        <button class="pencere-dugme" id="b-buyut" data-t-title="p.buyut"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></svg></button>
+        <button class="pencere-dugme kapat" id="b-kapat" data-t-title="p.kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </header>
+
+    <!-- Yeni sürüm bulununca (bkz. src/hakkinda.ts) -->
+    <div class="guncelleme-serit" id="gs" hidden>
+      <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg>
+      <span id="gs-metin"></span>
+      <button class="kucuk-dugme" id="gs-ac" data-t="gu.serit.ac"></button>
+      <button class="ikon-dugme" id="gs-kapat" data-t-title="gu.serit.sonra"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+
+    <main class="duzen">
+      <!-- SOL: dil seçimi + başlat -->
+      <section class="sutun sol">
+        <article class="kart">
+          <div class="kart-bas">
+            <div class="kart-ikon"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></div>
+            <div class="kart-baslik"><h2 data-t="kart.baslik"></h2><p data-t="kart.alt"></p></div>
+          </div>
+          <div class="olcer"><div class="olcer-dolgu" id="o-bilgisayar"></div></div>
+          <div class="dil-satiri">
+            <label class="alan"><span data-t="dil.konusulan"></span><select id="s-konusma"></select></label>
+            <button class="degistir" id="b-degistir" data-t-title="dil.degistir">⇄</button>
+            <label class="alan"><span data-t="dil.altyazi"></span><select id="s-hedef"></select></label>
+          </div>
+          <div class="kalite" id="kalite-satiri" hidden>
+            <label class="alan kmr-model"><span data-t="kmr.model"></span><select id="s-kmr-model"></select></label>
+            <div class="kmr-not" id="kmr-model-not"></div>
+            <div class="kalite-indir" id="kalite-indir" hidden>
+              <span id="kalite-indir-metin"></span>
+              <button class="kucuk-dugme" id="b-kaliteli-indir"></button>
+            </div>
+            <div class="kalite-indir" id="omni-indir" hidden>
+              <span id="omni-indir-metin"></span>
+              <button class="kucuk-dugme" id="b-omni-indir"></button>
+            </div>
+          </div>
+          <div class="kalite-indir" id="hiz-indir" hidden>
+            <span id="hiz-indir-metin"></span>
+            <button class="kucuk-dugme" id="b-hiz-indir"></button>
+          </div>
+        </article>
+
+        <div class="cekirdek">
+          <button class="baslat bekliyor" id="b-baslat">
+            <svg class="i-oynat" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+            <svg class="i-dur" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/></svg>
+            <span id="t-baslat"></span>
+          </button>
+          <div class="durum" id="durum"><span class="nokta"></span><span id="t-durum"></span></div>
+          <div class="hizli">
+            <button class="hap" id="b-serit" title="Ctrl+Alt+H"><svg viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 17h6"/></svg><span data-t="hap.serit"></span></button>
+            <button class="hap" id="b-gecir" title="Ctrl+Alt+K"><svg viewBox="0 0 24 24"><path d="m4 4 7 17 2.5-7.5L21 11 4 4Z"/></svg><span data-t="hap.gecir"></span></button>
+            <button class="hap" id="b-duraklat" title="Ctrl+Alt+P"><svg viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg><span></span></button>
+            <button class="hap" id="b-cevrimdisi" data-t-title="hap.cevrimdisi.t"><svg viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 4.2-2.6M9.5 5.2A15 15 0 0 1 22 8.8M5 12.5a10 10 0 0 1 3.2-2M13.3 10.2a10 10 0 0 1 5.7 2.3M8.5 16a5 5 0 0 1 7 0M12 20h.01M3 3l18 18"/></svg><span></span></button>
+          </div>
+        </div>
+
+        <article class="kart onizleme">
+          <div class="onizleme-etiket" data-t="onizleme.etiket"></div>
+          <div class="onizleme-ceviri" id="on-ceviri"></div>
+          <div class="onizleme-orijinal" id="on-orijinal"></div>
+        </article>
+      </section>
+
+      <!-- SAĞ: konuşma geçmişi -->
+      <section class="sutun sag">
+        <article class="kart gecmis">
+          <div class="gecmis-bas">
+            <h2 data-t="gecmis.baslik"></h2>
+            <div class="gecmis-dugmeler">
+              <button class="kucuk" id="b-kopyala" data-t-title="gecmis.kopyala"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+              <button class="kucuk" id="b-indir" data-t-title="gecmis.kaydet"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg></button>
+              <button class="kucuk" id="b-temizle" data-t-title="gecmis.temizle"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
+            </div>
+          </div>
+          <div class="gecmis-liste" id="gecmis">
+            <div class="bos" data-t-html="gecmis.bos"></div>
+          </div>
+          <button class="yeni-hap" id="b-yeni" hidden></button>
+        </article>
+      </section>
+    </main>
+
+    <!-- İlk açılış: bileşen kurulumu (sağ üstte program dili seçilebilir) -->
+    <div class="kurulum" id="kurulum" hidden>
+      <div class="kurulum-kart">
+        <div class="dil-secici kurulum-dil" id="kurulum-dil" role="group"></div>
+        <h2 id="k-baslik"></h2>
+        <p class="kurulum-aciklama" id="k-aciklama"></p>
+        <div class="kurulum-yuzde" id="k-yuzde">%0</div>
+        <div class="kurulum-cubuk"><div class="kurulum-dolgu" id="k-dolgu"></div></div>
+        <div class="kurulum-mesaj" id="k-mesaj"></div>
+        <div class="kurulum-ayrinti" id="k-ayrinti"></div>
+        <div class="kurulum-hata" id="k-hata" hidden></div>
+        <button class="kurulum-dugme" id="k-tekrar" data-t="k.tekrar" hidden></button>
+        <button class="kurulum-dugme ikincil" id="k-gizle" data-t="k.gizle" hidden></button>
+      </div>
+    </div>
+
+    <!-- Bu bilgisayar için öneriler: donanım analizine göre ek paketler -->
+    <div class="kurulum oneriler" id="oneriler" hidden>
+      <div class="kurulum-kart oneri-kart">
+        <h2 data-t="o.baslik"></h2>
+        <p class="kurulum-aciklama" data-t-html="o.aciklama"></p>
+        <div class="oneri-sistem" id="oneri-sistem"></div>
+        <div class="oneri-liste" id="oneri-liste"></div>
+        <button class="kurulum-dugme" id="oneri-kapat" data-t="o.tamam"></button>
+      </div>
+    </div>
+
+    <!-- Hakkında: sürüm, geliştirici, sosyal medya, güncellemeler (src/hakkinda.ts) -->
+    <div class="kurulum hakkinda" id="hakkinda" hidden>
+      <div class="kurulum-kart hk-kart">
+        <button class="ikon-dugme hk-kapat" id="hk-kapat" data-t-title="kv.kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <img class="hk-amblem" src="/src/amblem.png" alt="" />
+        <h2>MED LIVE TRANSLATE</h2>
+        <div class="hk-surum" id="hk-surum"></div>
+        <p class="kurulum-aciklama" data-t="hk.aciklama"></p>
+        <div class="hk-gelistirici"><span data-t="hk.gelistirici"></span> <b>CYBERGAH</b></div>
+
+        <h3 data-t="hk.takip"></h3>
+        <div class="hk-baglantilar" id="hk-baglantilar"></div>
+
+        <h3 data-t="gu.baslik"></h3>
+        <div class="hk-guncelleme">
+          <div class="hk-durum" id="hk-durum"></div>
+          <div class="kurulum-cubuk" id="hk-ilerleme" hidden><div class="kurulum-dolgu" id="hk-dolgu"></div></div>
+          <pre class="hk-notlar" id="hk-notlar" hidden></pre>
+          <div class="hk-dugmeler">
+            <button class="kurulum-dugme" id="hk-kur" hidden></button>
+            <button class="kurulum-dugme ikincil" id="hk-denetle" data-t="gu.denetle"></button>
+          </div>
+          <label class="secenek" id="hk-oto"><input type="checkbox" /><span data-t="gu.oto"></span></label>
+        </div>
+        <p class="hk-iletisim" id="hk-iletisim"></p>
+      </div>
+    </div>
+
+    <!-- Kullanım kılavuzu (içerik: src/kilavuz.ts) -->
+    <div class="kilavuz" id="kilavuz" hidden>
+      <div class="kv-ust">
+        <div>
+          <div class="kv-baslik" id="kv-baslik"></div>
+          <div class="kv-alt" id="kv-alt"></div>
+        </div>
+        <div class="kv-sekmeler" role="tablist">
+          <button class="kv-sekme" data-dil="tr" role="tab">Türkçe</button>
+          <button class="kv-sekme" data-dil="en" role="tab">English</button>
+          <button class="kv-sekme" data-dil="kmr" role="tab">Kurmancî</button>
+        </div>
+        <button class="ikon-dugme" id="kv-kapat" data-t-title="kv.kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="kv-govde">
+        <nav class="kv-nav" id="kv-nav"></nav>
+        <article class="kv-metin" id="kv-metin"></article>
+      </div>
+      <div class="kv-buyuk" id="kv-buyuk" hidden><img alt="" /></div>
+    </div>
+
+    <!-- Eski konuşmalar (içerik: src/gecmis.ts) -->
+    <div class="kilavuz gp" id="gp" hidden>
+      <div class="kv-ust">
+        <div>
+          <div class="kv-baslik" data-t="gp.baslik"></div>
+          <div class="kv-alt" id="gp-alt"></div>
+        </div>
+        <button class="hap" id="gp-tum-indir"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg><span data-t="gp.tum.indir"></span></button>
+        <button class="hap tehlikeli" id="gp-tum-sil"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg><span data-t="gp.tum.sil"></span></button>
+        <button class="ikon-dugme" id="gp-kapat" data-t-title="kv.kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="kv-govde gp-govde">
+        <nav class="kv-nav gp-liste" id="gp-liste"></nav>
+        <section class="gp-icerik">
+          <div class="gp-icerik-ust" id="gp-icerik-ust" hidden>
+            <div><b id="gp-secili"></b><span id="gp-secili-alt"></span></div>
+            <button class="hap" id="gp-indir"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg><span data-t="gp.indir"></span></button>
+            <button class="hap tehlikeli" id="gp-sil"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg><span data-t="gp.sil"></span></button>
+          </div>
+          <div class="gecmis-liste" id="gp-kayitlar"></div>
+        </section>
+      </div>
+      <div class="gp-onay" id="gp-onay" hidden>
+        <div class="kurulum-kart">
+          <p class="kurulum-aciklama" id="gp-onay-metin"></p>
+          <button class="kurulum-dugme tehlikeli-dugme" id="gp-onay-evet"></button>
+          <button class="kurulum-dugme ikincil" id="gp-onay-hayir" data-t="gp.vazgec"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ayarlar çekmecesi -->
+    <div class="perde" id="perde" hidden></div>
+    <aside class="cekmece" id="cekmece" aria-hidden="true">
+      <div class="cekmece-bas">
+        <h2 data-t="a.baslik"></h2>
+        <button class="ikon-dugme" id="b-cekmece-kapat" data-t-title="a.kapat"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+
+      <h3 data-t="a.dil"></h3>
+      <div class="dil-secici" id="ayar-dil" role="group"></div>
+      <p class="ayar-not" data-t="a.dil.aciklama"></p>
+
+      <h3 data-t="a.tema"></h3>
+      <div class="temalar" id="temalar"></div>
+
+      <h3 data-t="a.gorunum"></h3>
+      <label class="kaydirici"><span data-t="a.boyut"></span><input type="range" id="r-boyut" min="16" max="64" step="1" /><b id="v-boyut"></b></label>
+      <label class="kaydirici"><span data-t="a.satir"></span><input type="range" id="r-satir" min="1" max="4" step="1" /><b id="v-satir"></b></label>
+      <label class="kaydirici"><span data-t="a.opaklik"></span><input type="range" id="r-opaklik" min="0.2" max="1" step="0.02" /><b id="v-opaklik"></b></label>
+      <label class="secenek"><input type="checkbox" id="a-orijinal" /><span data-t="a.orijinal"></span></label>
+
+      <h3 data-t="a.gecmis"></h3>
+      <label class="secenek"><input type="checkbox" id="a-gecmis" /><span data-t="a.gecmis.kaydet"></span></label>
+      <p class="ayar-not" data-t="a.gecmis.aciklama"></p>
+
+      <h3 data-t="a.kisayollar"></h3>
+      <div class="kisayollar">
+        <div><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>H</kbd><span data-t="a.k.h"></span></div>
+        <div><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>P</kbd><span data-t="a.k.p"></span></div>
+        <div><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>M</kbd><span data-t="a.k.m"></span></div>
+        <div><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>K</kbd><span data-t="a.k.k"></span></div>
+        <div><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>↑</kbd><kbd>↓</kbd><span data-t="a.k.ok"></span></div>
+      </div>
+      <p class="motor-yolu" id="motor-yolu"></p>
+    </aside>
+  </body>
+</html>

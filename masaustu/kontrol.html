@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Altyazı Kontrol</title>
+    <link rel="stylesheet" href="/src/kontrol.css" />
+    <script type="module" src="/src/kontrol.ts"></script>
+  </head>
+  <body>
+    <div class="cubuk" id="cubuk">
+      <div class="tutamak" data-tauri-drag-region data-t-title="kc.tasi">
+        <svg viewBox="0 0 24 24" data-tauri-drag-region><circle cx="9" cy="6" r="1.2"/><circle cx="15" cy="6" r="1.2"/><circle cx="9" cy="12" r="1.2"/><circle cx="15" cy="12" r="1.2"/><circle cx="9" cy="18" r="1.2"/><circle cx="15" cy="18" r="1.2"/></svg>
+      </div>
+
+      <button class="baslat" id="b-baslat">
+        <span class="nokta"></span>
+        <svg class="i-oynat" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+        <svg class="i-dur" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/></svg>
+        <span id="t-baslat"></span>
+      </button>
+
+      <select id="s-konusma" data-t-title="dil.konusulan"></select>
+      <button class="ikon degistir" id="b-degistir" data-t-title="dil.degistir">⇄</button>
+      <select id="s-hedef" data-t-title="dil.altyazi"></select>
+
+      <span class="ayirac"></span>
+      <button class="ikon" id="b-duraklat" data-t-title="kc.duraklat">
+        <svg viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg>
+      </button>
+      <button class="ikon" id="b-serit" data-t-title="kc.serit">
+        <svg viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 17h6"/></svg>
+      </button>
+      <button class="ikon" id="b-ana" data-t-title="kc.ana">
+        <svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8M10 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-4"/></svg>
+      </button>
+      <button class="ikon kapat" id="b-gizle" data-t-title="kc.gizle">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </body>
+</html>

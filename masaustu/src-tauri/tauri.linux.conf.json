@@ -1,0 +1,20 @@
+{
+  "mainBinaryName": "med-live-translate",
+  "bundle": {
+    "targets": ["deb", "appimage"],
+    "resources": {
+      "../../whisper/*": null,
+      "kurulum/vcrt/*": null,
+      "../../whisper-linux/whisper-server": "whisper/whisper-server"
+    },
+    "linux": {
+      "deb": {
+        "depends": ["libpulse0", "libvulkan1"],
+        "section": "sound"
+      },
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    }
+  }
+}

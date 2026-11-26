@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Altyazı</title>
+    <link rel="stylesheet" href="/src/altyazi.css" />
+    <script type="module" src="/src/altyazi.ts"></script>
+  </head>
+  <body>
+    <div class="kutu" id="kutu">
+      <div class="icerik" id="icerik"></div>
+      <div class="tutamak" id="tutamak" data-t-title="s.genislik"></div>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <button data-eylem="buyut"><span data-t="s.buyut"></span> <kbd>Ctrl+Alt+↑</kbd></button>
+      <button data-eylem="kucult"><span data-t="s.kucult"></span> <kbd>Ctrl+Alt+↓</kbd></button>
+      <button data-eylem="temizle" data-t="s.temizle"></button>
+      <hr />
+      <button data-eylem="tiklama"><span data-t="s.tiklama"></span> <kbd>Ctrl+Alt+K</kbd></button>
+      <button data-eylem="gizle"><span data-t="s.gizle"></span> <kbd>Ctrl+Alt+H</kbd></button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{
+ "surum": 1,
+ "dosyalar": [
+  {
+   "tur": "gpu",
+   "ad": "nvidia_cublas_cu12-12.6.4.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+   "url": "https://files.pythonhosted.org/packages/af/eb/ff4b8c503fa1f1796679dce648854d58751982426e4e4b37d6fce49d259c/nvidia_cublas_cu12-12.6.4.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+   "boyut": 393138322,
+   "sha256": "08ed2686e9875d01b58e3cb379c6896df8e76c75e0d4a7f7dace3d7b6d9ef8eb",
+   "aciklama": "Ekran kartı kitaplığı (NVIDIA cuBLAS)"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-large-kurmanji-ct2/config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-large-kurmanji-ct2/config.json",
+   "boyut": 2634,
+   "sha256": "f277d9390e65adc1630b349151eca38aaf7420c41c814271928854edcfd6ffbe",
+   "aciklama": "Kaliteli Kurmancî modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-large-kurmanji-ct2/preprocessor_config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-large-kurmanji-ct2/preprocessor_config.json",
+   "boyut": 357,
+   "sha256": "654cf18d3e163b948ceaf9766da56ce0b52de265d58673cf61c9376f126bd499",
+   "aciklama": "Kaliteli Kurmancî modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-large-kurmanji-ct2/tokenizer.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-large-kurmanji-ct2/tokenizer.json",
+   "boyut": 2480617,
+   "sha256": "6d8cbd7cd0d8d5815e478dac67b85a26bbe77c1f5e0c6d76d1ce2abc0e5f21ca",
+   "aciklama": "Kaliteli Kurmancî modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-large-kurmanji-ct2/vocabulary.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-large-kurmanji-ct2/vocabulary.json",
+   "boyut": 1119981,
+   "sha256": "697ee5a65726e46b4d294d1a243d98e1878f5d81caba17891b1c5ebab7a912a9",
+   "aciklama": "Kaliteli Kurmancî modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-large-kurmanji-ct2/model.bin",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-large-kurmanji-ct2/model.bin",
+   "boyut": 1551326177,
+   "sha256": "21cdcb7d8b99a60b0cc00c05ec6c428f57c4ce6f811d2800be01d1095f87011d",
+   "aciklama": "Kaliteli Kurmancî modeli"
+  }
+ ]
+}

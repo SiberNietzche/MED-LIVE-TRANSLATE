@@ -1,0 +1,13 @@
+{
+ "surum": 1,
+ "dosyalar": [
+  {
+   "tur": "model",
+   "ad": "modeller/ggml/ggml-whisper-large-kurmanji-q5_0.bin",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/c7afac344a94299ab5d3f7ad4bf93a478f57e1da/ggml/ggml-whisper-large-kurmanji-q5_0.bin",
+   "boyut": 1081140203,
+   "sha256": "13a1864d4dcf10bad2ba559957ce59f8373501f8a57f8e2ffa0f6df5c45ad051",
+   "aciklama": "Kaliteli Kurmancî ekran kartı modeli"
+  }
+ ]
+}

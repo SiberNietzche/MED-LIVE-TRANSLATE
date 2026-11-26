@@ -1,0 +1,144 @@
+# macOS otomatik deneme: son başarılı "macOS" derlemesinin .dmg'sini GitHub'ın gerçek Mac'inde kurar,
+# ilk açılış kurulumunu, yazıya dökme + çeviriyi, ekran kartını (Metal) ve bilgisayar sesi yakalamayı dener.
+# Intel yarısı GitHub'ın gerçek Intel Mac'inde (macos-15-intel) denenir. Sonuçlar ve ekran görüntüleri "Artifacts" bölümünde.
+name: macOS deneme
+
+on:
+  workflow_dispatch:
+    inputs:
+      derleme:
+        description: "Denenecek macOS derlemesinin numarası (boş: son başarılı)"
+        required: false
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  dene:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mimari: arm64
+            makine: macos-latest
+          - mimari: x86_64
+            makine: macos-15-intel
+    runs-on: ${{ matrix.makine }}
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      KOK: /Users/runner/Library/Application Support/med-live-translate
+      UYG: /Applications/MED LIVE TRANSLATE.app
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sistem bilgisi
+        run: |
+          sw_vers; uname -m; sysctl -n machdep.cpu.brand_string; sysctl -n hw.memsize
+          system_profiler SPDisplaysDataType | grep -E "Chipset|Metal|Vendor" || true
+          csrutil status || true
+
+      - name: .dmg'yi indir ve kur
+        run: |
+          RUN="${{ github.event.inputs.derleme }}"
+          [ -n "$RUN" ] || RUN=$(gh run list --workflow macos.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "derleme: $RUN"
+          gh run download "$RUN" -n MED-LIVE-TRANSLATE-macos -D /tmp/dmg
+          hdiutil attach -nobrowse -mountpoint /tmp/mlt /tmp/dmg/*.dmg
+          cp -R /tmp/mlt/*.app /Applications/
+          hdiutil detach /tmp/mlt
+          ls -la "$UYG/Contents/MacOS" "$UYG/Contents/Resources"
+          lipo -info "$UYG/Contents/MacOS/"*
+          spctl -a -vv "$UYG" 2>&1 || echo "(beklenen: Apple imzası yok, Gatekeeper reddeder)"
+
+      - name: Sanal ses kartı (BlackHole) ve izinler
+        run: |
+          brew install --quiet blackhole-2ch switchaudio-osx || true
+          sudo killall coreaudiod || true
+          sleep 5
+          SwitchAudioSource -a || true
+          SwitchAudioSource -s "BlackHole 2ch" || true
+          SwitchAudioSource -c || true
+          chmod +x macos/test/izin_ver.sh
+          ISTEMCILER=("$KOK/macos/ses_yakala" "$UYG" "$UYG/Contents/MacOS/MED LIVE TRANSLATE" /bin/bash /bin/sh /usr/sbin/screencapture)
+          for p in $(ps -axo comm= | grep -iE "runner|provisioner|Worker|Listener" | sort -u); do ISTEMCILER+=("$p"); done
+          macos/test/izin_ver.sh "${ISTEMCILER[@]}"
+
+      - name: Programı aç (ilk açılış kurulumu)
+        run: |
+          open "$UYG"
+          sleep 20
+          mkdir -p /tmp/sonuc
+          screencapture -x /tmp/sonuc/1_ilk_acilis.png || echo "ekran görüntüsü alınamadı"
+          for i in $(seq 240); do
+            [ -f "$KOK/bilesenler_tamam.txt" ] && { echo "KURULUM_TAMAM ($((i*5)) sn)"; break; }
+            grep -q "HATA" "$KOK/kurulum_gunluk.txt" 2>/dev/null && { echo "KURULUM_HATA"; break; }
+            sleep 5
+          done
+          cat "$KOK/kurulum_gunluk.txt" || true
+          ls -la "$KOK" "$KOK/macos" "$KOK/whisper" || true
+          file "$KOK/python/bin/python3.11" || true
+          sleep 15
+          screencapture -x /tmp/sonuc/2_kurulum_sonrasi.png || true
+          pgrep -fl "canli_altyazi.sunucu" && echo "MOTOR_CALISIYOR" || echo "MOTOR_YOK"
+          tail -30 "$KOK/motor_gunluk.txt" || true
+          test -f "$KOK/bilesenler_tamam.txt"
+
+      - name: Konuşma sesi üret
+        run: |
+          say -o /tmp/en.aiff "Good morning everyone. Welcome to our meeting. Today we will talk about the new project and the budget for next year."
+          afconvert -f WAVE -d LEI16@16000 -c 1 /tmp/en.aiff /tmp/en.wav
+          afinfo /tmp/en.wav | grep -E "duration|format"
+
+      - name: "Deneme 1: yazıya dökme + çeviri"
+        run: |
+          "$KOK/python/bin/python3" macos/test/mac_dene.py motor /tmp/en.wav 2>&1 | tee /tmp/sonuc/motor.txt
+          grep -q "SONUC motor BASARILI" /tmp/sonuc/motor.txt
+
+      - name: "Deneme 2: ekran kartı (Metal)"
+        if: matrix.mimari == 'arm64'
+        continue-on-error: true
+        run: |
+          URL=$(python3 -c "import json;print(json.load(open('masaustu/src-tauri/kurulum/hizlandirma.json'))['dosyalar'][0]['url'])")
+          mkdir -p "$KOK/modeller/ggml"
+          curl -sSfL -o "$KOK/modeller/ggml/ggml-large-v3-turbo-q5_0.bin" "$URL"
+          "$KOK/python/bin/python3" macos/test/mac_dene.py kart /tmp/en.wav 2>&1 | tee /tmp/sonuc/kart.txt
+          grep -q "SONUC kart BASARILI" /tmp/sonuc/kart.txt
+
+      - name: "Deneme 3: ses yakalayıcı tek başına"
+        continue-on-error: true
+        run: |
+          ( sleep 4; afplay /tmp/en.wav; afplay /tmp/en.wav ) &
+          # stdin 20 sn açık kalır; kapanınca yakalayıcı kendiliğinden çıkar (motor kapanmış gibi)
+          sleep 20 | "$KOK/macos/ses_yakala" > /tmp/yakalanan.raw 2> /tmp/sonuc/yakalayici_hata.txt || echo "çıkış kodu $?"
+          cat /tmp/sonuc/yakalayici_hata.txt
+          "$KOK/python/bin/python3" -c "
+          import numpy as np; v = np.fromfile('/tmp/yakalanan.raw', dtype='<f4')
+          print(f'yakalanan: {len(v)/16000:.1f} sn, en yüksek seviye {float(np.abs(v).max()) if len(v) else 0:.3f}')
+          print('SONUC yakalayici', 'BASARILI' if len(v) and np.abs(v).max() > 0.01 else 'BASARISIZ')
+          " | tee /tmp/sonuc/yakalayici.txt
+          grep -q "SONUC yakalayici BASARILI" /tmp/sonuc/yakalayici.txt
+
+      - name: "Deneme 4: uçtan uca (bilgisayar sesi → altyazı)"
+        continue-on-error: true
+        run: |
+          pkill -f "canli_altyazi.sunucu" || true
+          "$KOK/python/bin/python3" macos/test/mac_dene.py uctan /tmp/en.wav 2>&1 | tee /tmp/sonuc/uctan.txt
+          grep -q "SONUC uctan BASARILI" /tmp/sonuc/uctan.txt
+
+      - name: Son ekran görüntüsü ve günlükler
+        if: always()
+        run: |
+          screencapture -x /tmp/sonuc/3_son.png || true
+          cp "$KOK"/*gunluk*.txt /tmp/sonuc/ 2>/dev/null || true
+          cp /tmp/uygulama.log /tmp/sonuc/ 2>/dev/null || true
+          echo "===== ÖZET (${{ matrix.mimari }}) ====="
+          grep -h "^SONUC" /tmp/sonuc/*.txt || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mac-deneme-${{ matrix.mimari }}
+          path: /tmp/sonuc
+          retention-days: 14

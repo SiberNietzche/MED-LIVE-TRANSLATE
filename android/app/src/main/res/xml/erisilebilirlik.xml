@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hiçbir olay dinlenmez, ekran içeriği okunmaz: hizmet yalnızca görüşme sırasında mikrofonu duyabilmek için var. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAnnouncement"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="false"
+    android:notificationTimeout="1000"
+    android:description="@string/erisilebilirlik_aciklama"
+    android:summary="@string/erisilebilirlik_ozet" />

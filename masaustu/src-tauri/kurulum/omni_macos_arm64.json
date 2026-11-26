@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "dosyalar": [
+  {
+   "tur": "paket",
+   "ad": "sherpa_onnx_core-2.0.3-py3-none-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/f1/36/0c887684a033f6de0a5e3c0e7a244330fd1fb1a89a9917da70aff4ff6e59/sherpa_onnx_core-2.0.3-py3-none-macosx_11_0_arm64.whl",
+   "boyut": 9871853,
+   "sha256": "ca19ab0ae8c78b9a0a987ebd1aa69b73e3b7490733646e831db46260dab85316",
+   "aciklama": "Kürtçe Orta: sherpa-onnx"
+  },
+  {
+   "tur": "paket",
+   "ad": "sherpa_onnx-2.0.3-cp311-cp311-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/0e/f5/0d1600f5c32a6aa9d8dc73a221f60f59032e694dbcca3e3b5e304ff58640/sherpa_onnx-2.0.3-cp311-cp311-macosx_11_0_arm64.whl",
+   "boyut": 2429884,
+   "sha256": "c6cdfce22f61090fa756c0ff21aa58df3ba556bbd6078efb08b665768f19caa4",
+   "aciklama": "Kürtçe Orta: sherpa-onnx"
+  },
+  {
+   "tur": "arsiv",
+   "ad": "modeller/omnilingual-1b-v2",
+   "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-omnilingual-asr-1600-languages-1B-ctc-v2-int8-2026-02-05.tar.bz2",
+   "boyut": 787296506,
+   "sha256": "f4deae6e6cbf4ca785b89eaa3836156581208bf977ea2e6d7ae84d7efcfc3a40",
+   "aciklama": "Kürtçe Orta modeli (Meta Omnilingual)"
+  }
+ ]
+}

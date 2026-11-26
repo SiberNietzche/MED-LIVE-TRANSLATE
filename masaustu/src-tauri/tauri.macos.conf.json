@@ -1,0 +1,15 @@
+{
+  "bundle": {
+    "targets": ["app", "dmg"],
+    "resources": {
+      "../../whisper/*": null,
+      "kurulum/vcrt/*": null,
+      "../../macos/derleme/whisper-server": "whisper/whisper-server",
+      "../../macos/derleme/ses_yakala": "macos/ses_yakala"
+    },
+    "macOS": {
+      "minimumSystemVersion": "13.0",
+      "signingIdentity": "-"
+    }
+  }
+}

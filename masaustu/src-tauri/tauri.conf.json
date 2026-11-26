@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MED LIVE TRANSLATE",
+  "mainBinaryName": "MED LIVE TRANSLATE",
+  "version": "1.0.0",
+  "identifier": "com.canlialtyazi.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "MED LIVE TRANSLATE",
+        "url": "index.html",
+        "width": 1180,
+        "height": 760,
+        "minWidth": 860,
+        "minHeight": 620,
+        "decorations": false,
+        "center": true,
+        "backgroundColor": "#07060f"
+      },
+      {
+        "label": "altyazi",
+        "title": "MED LIVE TRANSLATE - Altyazı",
+        "url": "altyazi.html",
+        "width": 1100,
+        "height": 110,
+        "minWidth": 360,
+        "minHeight": 60,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "resizable": true,
+        "focus": false,
+        "visible": false
+      },
+      {
+        "label": "kontrol",
+        "title": "MED LIVE TRANSLATE - Kontrol",
+        "url": "kontrol.html",
+        "width": 640,
+        "height": 52,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "resizable": false,
+        "focus": false,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "MED",
+    "copyright": "MED LIVE TRANSLATE",
+    "category": "Productivity",
+    "shortDescription": "Bilgisayar sesini canlı altyazıya çevirir (Kurmancî, Türkçe, İngilizce, Arapça)",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "../../canli_altyazi/*.py": "canli_altyazi/",
+      "../../canli_altyazi/*.txt": "canli_altyazi/",
+      "kurulum/vcrt/*": "kurulum/vcrt/",
+      "../../whisper/*": "whisper/"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "icons/icon.ico",
+        "installerHooks": "windows/hooks.nsh",
+        "languages": ["Turkish"],
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}

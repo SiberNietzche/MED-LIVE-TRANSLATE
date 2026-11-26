@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="erisilebilirlik_ad">MED LIVE TRANSLATE — call subtitles</string>
+    <string name="erisilebilirlik_ozet">Lets the subtitles hear the microphone during speakerphone calls (WhatsApp, Zoom, Meet…).</string>
+    <string name="erisilebilirlik_aciklama">During a call Android gives the microphone only to the call app; the subtitle app receives silence. While this service is on, MED LIVE TRANSLATE can hear the microphone during calls too and make subtitles.
+
+This service does not read anything on your screen, does not watch your touches and performs no actions. Sound is transcribed only on the phone.</string>
+</resources>

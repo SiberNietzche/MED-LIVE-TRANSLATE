@@ -1,0 +1,8 @@
+# Geliştirme için. Dağıtımda paketler masaustu/src-tauri/kurulum/bilesenler.json listesinden
+# (sabit sürüm + sha256) programın kendisi tarafından kurulur; PyTorch gerekmez.
+faster-whisper==1.2.1
+ctranslate2==4.9.0
+SoundCard==0.4.6
+safetensors==0.8.0
+requests==2.34.2
+numpy==1.26.4

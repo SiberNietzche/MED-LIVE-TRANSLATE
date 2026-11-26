@@ -1,0 +1,373 @@
+{
+ "surum": 2,
+ "dosyalar": [
+  {
+   "tur": "python",
+   "ad": "cpython-3.11.18+20261110-aarch64-apple-darwin-install_only.tar.gz",
+   "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.11.18%2B20261110-aarch64-apple-darwin-install_only.tar.gz",
+   "boyut": 27111938,
+   "sha256": "73f1ed14486aa278d331e95f7d6d452f5cfb69d90b418e26e62fd4846d53557d",
+   "aciklama": "Python çalışma ortamı"
+  },
+  {
+   "tur": "paket",
+   "ad": "faster_whisper-1.2.1-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/05/99/49ee85903dee060d9f08297b4a342e5e0bcfca2f027a07b4ee0a38ab13f9/faster_whisper-1.2.1-py3-none-any.whl",
+   "boyut": 1118909,
+   "sha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "ctranslate2-4.9.0-cp311-cp311-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/41/6b/ca9fe0dbc7c4f76d57c1d759a23cf059c3e323effc29b2c21208908b5bb7/ctranslate2-4.9.0-cp311-cp311-macosx_11_0_arm64.whl",
+   "boyut": 1662417,
+   "sha256": "78a0a59721031193e52732b1e565bfaee7c22ec0d1c48d40e9ed4bc7341a843e",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "soundcard-0.4.6-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/4c/be/eb381e700a61b4ce899e14850d7ae78f9600fd2f8b58b4c52b8714e81917/soundcard-0.4.6-py3-none-any.whl",
+   "boyut": 43939,
+   "sha256": "ab44b8c1033ac6ec49c5d618ce096dab9b60c7d7a427c92bef15856e5ebb3e09",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "requests-2.34.2-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+   "boyut": 73075,
+   "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "numpy-1.26.4-cp311-cp311-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/1a/2e/151484f49fd03944c4a3ad9c418ed193cfd02724e138ac8a9505d056c582/numpy-1.26.4-cp311-cp311-macosx_11_0_arm64.whl",
+   "boyut": 13997127,
+   "sha256": "edd8b5fe47dab091176d21bb6de568acdd906d1887a4584a15a9a96a1dca06ef",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "charset_normalizer-3.5.2-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/fc/ad/d07d7862a62ffa6d79d68074d14823243dd235a77c45262acbf6adeb28bf/charset_normalizer-3.5.2-py3-none-any.whl",
+   "boyut": 68872,
+   "sha256": "b6b751274acb69d77b3323d6b7dbaa3c7fdfc1eb829b7eb61d262f32e1af9685",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "idna-3.20-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl",
+   "boyut": 69583,
+   "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "onnxruntime-1.23.2-cp311-cp311-macosx_13_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/44/be/467b00f09061572f022ffd17e49e49e5a7a789056bad95b54dfd3bee73ff/onnxruntime-1.23.2-cp311-cp311-macosx_13_0_arm64.whl",
+   "boyut": 17196113,
+   "sha256": "6f91d2c9b0965e86827a5ba01531d5b669770b01775b23199565d6c1f136616c",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "pyyaml-6.0.3-cp311-cp311-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/16/19/13de8e4377ed53079ee996e1ab0a9c33ec2faf808a4647b7b4c0d46dd239/pyyaml-6.0.3-cp311-cp311-macosx_11_0_arm64.whl",
+   "boyut": 175577,
+   "sha256": "652cb6edd41e718550aad172851962662ff2681490a8a711af6a4d288dd96824",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "tokenizers-0.23.3-cp310-abi3-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/b2/72/01e49f032bb346e5aaf06c10c74fe8aeec847173adbadd66eb7c53054bf2/tokenizers-0.23.3-cp310-abi3-macosx_11_0_arm64.whl",
+   "boyut": 3101381,
+   "sha256": "68649e97d5b43c44c031d8d848874a6eecae8f8fe40ea989aa777a5a83aca716",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "huggingface_hub-2.4.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/d4/55/ff47f1b082ecf5f43f4bc1e3b932d68eead171dabbbd1a92666c686301d7/huggingface_hub-2.4.0-py3-none-any.whl",
+   "boyut": 857021,
+   "sha256": "42ecfd93ede47bdd333daebbf66a32d7bfe2e18752754fe4d2d4f98a0179d801",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "click-8.5.1-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl",
+   "boyut": 126163,
+   "sha256": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "hf_xet-1.8.0-cp38-abi3-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/d4/f2/ef25e2085e92dcaeaa675331e443923aed2006f6fe2d984e15d8b8d40766/hf_xet-1.8.0-cp38-abi3-macosx_11_0_arm64.whl",
+   "boyut": 3600947,
+   "sha256": "3e8934784425781f0f779b91044df441f3a7af4dab47375d7e3aeaecbb8eecb4",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "httpx2-2.16.2-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/77/de/8c4306a3d6aa2495111986addf33a9e561eff4c47552e4c4b9251160d0ad/httpx2-2.16.2-py3-none-any.whl",
+   "boyut": 97893,
+   "sha256": "f05c13aade4c45dbf1c9060647a1058f0acad62398fad96e741269edb33d46f5",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "httpcore2-2.16.2-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/2a/e8/009c347feac27f8960605aa98d55ed263b5870dd4fd80b82fd1d00d5716c/httpcore2-2.16.2-py3-none-any.whl",
+   "boyut": 85551,
+   "sha256": "16051ae2a42f776007543f32de9349a317b23d2cbb4e1456b4bac0e88b87419a",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "urllib3-2.8.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl",
+   "boyut": 135717,
+   "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "anyio-4.16.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/a9/16/7757fb84c819accc7d7e9af5291b261e4abb8627ee040f99e7d35ef2457a/anyio-4.16.0-py3-none-any.whl",
+   "boyut": 134521,
+   "sha256": "c66ae634e0b8228396b801741beb3294326d4b6102f7bba4041c0dfb58c29026",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "av-15.1.0-cp311-cp311-macosx_13_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/47/58/4e44cf6939be7aba96a4abce024e1be11ba7539ecac74d09369b8c03aa05/av-15.1.0-cp311-cp311-macosx_13_0_arm64.whl",
+   "boyut": 21767323,
+   "sha256": "b785948762a8d45fc58fc24a20251496829ace1817e9a7a508a348d6de2182c3",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "certifi-2026.10.23-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl",
+   "boyut": 135082,
+   "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "filelock-4.2.11-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/ed/50/efc158a54b0046104b546f24b28ca1bf25b72969adb960032252a1687a96/filelock-4.2.11-py3-none-any.whl",
+   "boyut": 222003,
+   "sha256": "020e229e4bb9d410fc799c07ddf45fa217cba970278f40b30751d94f309b69e2",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "fsspec-2026.9.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/6c/c0/a98505f18594f1bce828bb159cec0fcf9860562f1a2c85913409fc8f3d9e/fsspec-2026.9.0-py3-none-any.whl",
+   "boyut": 221738,
+   "sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "h11-0.16.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl",
+   "boyut": 37515,
+   "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "packaging-26.3-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+   "boyut": 129956,
+   "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "protobuf-7.36.2-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/e4/04/d52c7016b04b6c5108f26691f9d33ec82a9b65d041f1a9c771137693d618/protobuf-7.36.2-py3-none-any.whl",
+   "boyut": 179806,
+   "sha256": "bdb3a345d48db958e6ce1f18e508beb0cc981d64f24088427549c866cd039f1e",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "tqdm-4.70.1-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl",
+   "boyut": 80199,
+   "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "truststore-0.10.5-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/51/e9/3a7820be2bb0fe53b6bc9c3be26d3d1158004e4c3ab953aa6840b955b1e9/truststore-0.10.5-py3-none-any.whl",
+   "boyut": 19017,
+   "sha256": "9aaaedaefaf06d8b206278cf8b5012bc897f485a874503501e12d776df78951c",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "typing_extensions-4.16.0-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+   "boyut": 45571,
+   "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "cffi-2.1.1-cp311-cp311-macosx_11_0_arm64.whl",
+   "url": "https://files.pythonhosted.org/packages/cd/95/31b535a9f0220ae9f357de4a08d57ce89cb417653c2fd9f075f50822a388/cffi-2.1.1-cp311-cp311-macosx_11_0_arm64.whl",
+   "boyut": 184168,
+   "sha256": "398aff33cee2767e3e781d2554c54bd0dff386bb437581e0d8011fde1a942ec1",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "colorama-0.4.6-py2.py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+   "boyut": 25335,
+   "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+   "boyut": 26661,
+   "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "paket",
+   "ad": "pycparser-3.12-py3-none-any.whl",
+   "url": "https://files.pythonhosted.org/packages/b6/ae/315bbeee126a769cbde43cf4908acb4b40408d8bf8bbf334dd7368d8dadf/pycparser-3.12-py3-none-any.whl",
+   "boyut": 62600,
+   "sha256": "a076f3f489b39b43ed13563a1dafe42447445bec2e294154ec5c57fcdda4c85e",
+   "aciklama": "Program paketleri"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-turbo-int8/config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-turbo-int8/config.json",
+   "boyut": 2487,
+   "sha256": "27ec8ecb8ba05f3ac81522a7a035bd5ab19a5b567640bf68ccec90ded4fc1726",
+   "aciklama": "Türkçe/İngilizce/Arapça konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-turbo-int8/preprocessor_config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-turbo-int8/preprocessor_config.json",
+   "boyut": 340,
+   "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+   "aciklama": "Türkçe/İngilizce/Arapça konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-turbo-int8/tokenizer.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-turbo-int8/tokenizer.json",
+   "boyut": 2710337,
+   "sha256": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+   "aciklama": "Türkçe/İngilizce/Arapça konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-turbo-int8/vocabulary.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-turbo-int8/vocabulary.json",
+   "boyut": 1119981,
+   "sha256": "697ee5a65726e46b4d294d1a243d98e1878f5d81caba17891b1c5ebab7a912a9",
+   "aciklama": "Türkçe/İngilizce/Arapça konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-turbo-int8/model.bin",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-turbo-int8/model.bin",
+   "boyut": 814054531,
+   "sha256": "7482f978f9493b93b3d0bf68a148a1a62ca02547e8ee981358ff8ef2de8a9418",
+   "aciklama": "Türkçe/İngilizce/Arapça konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-small-kurmanji-ct2/config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-small-kurmanji-ct2/config.json",
+   "boyut": 2585,
+   "sha256": "f70d958c83258ac55d7146311307345f170847bcd5207b341b3da2bd2fa0a576",
+   "aciklama": "Kurmancî konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-small-kurmanji-ct2/preprocessor_config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-small-kurmanji-ct2/preprocessor_config.json",
+   "boyut": 356,
+   "sha256": "994838f1fa6462c8b9b3c90edada831f11f3dd8b4664634e18f4694d005c9dbf",
+   "aciklama": "Kurmancî konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-small-kurmanji-ct2/tokenizer.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-small-kurmanji-ct2/tokenizer.json",
+   "boyut": 2480466,
+   "sha256": "27fc476bfe7f17299480be2273fc0608e4d5a99aba2ab5dec5374b4482d1a566",
+   "aciklama": "Kurmancî konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-small-kurmanji-ct2/vocabulary.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-small-kurmanji-ct2/vocabulary.json",
+   "boyut": 1119969,
+   "sha256": "aa4e6188766a36f6a7f3e44db3f74823c6fee0bf33a9559247e18fedb3bc8d55",
+   "aciklama": "Kurmancî konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/whisper-small-kurmanji-ct2/model.bin",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/whisper-small-kurmanji-ct2/model.bin",
+   "boyut": 248203797,
+   "sha256": "d6f533e22ff012e785a021b76c628d9aa83bf3ddc0c5d0c41dac0c5d99e4e82e",
+   "aciklama": "Kurmancî konuşma modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/nllb-600M-ct2/config.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/nllb-600M-ct2/config.json",
+   "boyut": 233,
+   "sha256": "72901fbd8abd89fb5cf4a388f26fc681f5c4c58a1e1a88b30b879f107270e7ee",
+   "aciklama": "Çevrimdışı yedek çeviri modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/nllb-600M-ct2/shared_vocabulary.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/nllb-600M-ct2/shared_vocabulary.json",
+   "boyut": 6177383,
+   "sha256": "768aa4170693765cb4c62fc485ea4fd954cd3e5a44bc645d11d83f41f2393776",
+   "aciklama": "Çevrimdışı yedek çeviri modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/nllb-600M-ct2/tokenizer.json",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/nllb-600M-ct2/tokenizer.json",
+   "boyut": 17331176,
+   "sha256": "e316b82de11d0f951f370943b3c438311629547285129b0b81dadabd01bca665",
+   "aciklama": "Çevrimdışı yedek çeviri modeli"
+  },
+  {
+   "tur": "model",
+   "ad": "modeller/nllb-600M-ct2/model.bin",
+   "url": "https://huggingface.co/Seyfipolat/med-live-translate-modeller/resolve/3bd25f74a7974fc57d3fa2c4a99634f6d15307fa/nllb-600M-ct2/model.bin",
+   "boyut": 619704329,
+   "sha256": "831d36c506c59ff7d312ba0a08c4d199eadbc4de68a99d7c4f61736d8e2f13cc",
+   "aciklama": "Çevrimdışı yedek çeviri modeli"
+  }
+ ]
+}

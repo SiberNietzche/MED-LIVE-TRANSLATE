@@ -1,0 +1,26 @@
+# derleme çıktıları, bağımlılıklar, önbellekler
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+/masaustu/dist/
+/masaustu/src-tauri/target/
+/masaustu/src-tauri/gen/
+/macos/derleme/
+/whisper/
+/modeller/
+.gradle/
+.kotlin/
+build/
+.cxx/
+android/local.properties
+
+# gizli / kişisel dosyalar (hiçbir klasörde depoya girmesin)
+android/imza/
+*.jks
+*.keystore
+*anahtar*.txt
+*api_key*
+*.env
+ayarlar.json
+*_gunluk.txt

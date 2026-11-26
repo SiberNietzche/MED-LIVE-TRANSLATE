@@ -1,0 +1,81 @@
+# macOS universal (Apple Silicon + Intel) derlemesi. Elle başlatılır: Actions → macOS → Run workflow
+# (ya da: gh workflow run macos.yml). Çıktı: imzasız (ad-hoc) .dmg — "Artifacts" bölümünden indirilir.
+name: macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  macos:
+    runs-on: macos-latest   # Apple Silicon sunucu; Intel yarısı çapraz derlenir
+    timeout-minutes: 60
+    env:
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+      RUSTFLAGS: "--remap-path-prefix=/Users/runner=~"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: masaustu/package-lock.json
+
+      - name: Rust (iki mimari)
+        run: |
+          rustup target add aarch64-apple-darwin x86_64-apple-darwin
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            masaustu/src-tauri/target
+          key: cargo-mac-${{ hashFiles('masaustu/src-tauri/Cargo.lock') }}
+
+      - name: whisper-server (Metal, Apple Silicon)
+        # Intel Mac'te ekran kartı kullanılmaz (motor işlemciye döner): yalnızca arm64 derlenir
+        run: |
+          git clone --depth 1 --branch v1.9.5 https://github.com/ggml-org/whisper.cpp.git /tmp/wcpp
+          cmake -S /tmp/wcpp -B /tmp/wbd -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF \
+            -DCMAKE_OSX_ARCHITECTURES=arm64 -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON -DGGML_NATIVE=OFF -DGGML_BLAS=OFF \
+            -DWHISPER_BUILD_TESTS=OFF -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0
+          cmake --build /tmp/wbd -j 4 --target whisper-server
+          mkdir -p macos/derleme
+          cp "$(find /tmp/wbd -name whisper-server -type f -perm -u+x | head -1)" macos/derleme/whisper-server
+          strip -x macos/derleme/whisper-server
+          codesign --force -s - macos/derleme/whisper-server
+          otool -L macos/derleme/whisper-server
+
+      - name: Ses yakalayıcı (ScreenCaptureKit, universal)
+        run: |
+          mkdir -p macos/derleme
+          for a in arm64 x86_64; do
+            swiftc -O -target $a-apple-macos13.0 macos/ses_yakala.swift -o /tmp/ses_yakala_$a
+          done
+          lipo -create /tmp/ses_yakala_arm64 /tmp/ses_yakala_x86_64 -output macos/derleme/ses_yakala
+          codesign --force -s - macos/derleme/ses_yakala
+          lipo -info macos/derleme/ses_yakala
+
+      - name: Uygulama (universal .app + .dmg)
+        working-directory: masaustu
+        run: |
+          npm ci --no-audit --no-fund
+          mkdir -p ../whisper   # Windows kaynak deseni boş da olsa var olsun
+          npx tauri build --target universal-apple-darwin
+          ls -la src-tauri/target/universal-apple-darwin/release/bundle/dmg
+
+      - name: Denetim
+        run: |
+          APP="$(ls -d masaustu/src-tauri/target/universal-apple-darwin/release/bundle/macos/*.app | head -1)"
+          lipo -info "$APP/Contents/MacOS/"*
+          ls -la "$APP/Contents/Resources/whisper" "$APP/Contents/Resources/macos"
+          codesign -dv "$APP" 2>&1 | head -5
+          # derleme makinesinin yolları ikili dosyaya girmemeli
+          ! grep -a -q "/Users/runner" "$APP/Contents/MacOS/"* || echo "UYARI: derleme yolu gömülü"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MED-LIVE-TRANSLATE-macos
+          path: masaustu/src-tauri/target/universal-apple-darwin/release/bundle/dmg/*.dmg
+          retention-days: 30

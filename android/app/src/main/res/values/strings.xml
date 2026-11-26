@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="erisilebilirlik_ad">MED LIVE TRANSLATE — görüşme altyazısı</string>
+    <string name="erisilebilirlik_ozet">Hoparlörü açık görüşmelerde (WhatsApp, Zoom, Meet…) altyazının mikrofonu duyabilmesi için.</string>
+    <string name="erisilebilirlik_aciklama">Android, bir görüşme sürerken mikrofonu yalnızca görüşme uygulamasına verir; altyazı uygulaması sessizlik alır. Bu hizmet açıkken MED LIVE TRANSLATE görüşme sırasında da mikrofonu duyar ve altyazı üretir.\n\nBu hizmet ekrandaki hiçbir içeriği okumaz, dokunuşlarınızı izlemez ve hiçbir işlem yapmaz. Ses yalnızca telefonda yazıya dökülür.</string>
+</resources>

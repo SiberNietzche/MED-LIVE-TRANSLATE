@@ -1,0 +1,28 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Ana pencere, altyazı şeridi ve küçük kontrol çubuğu izinleri",
+  "windows": ["main", "altyazi", "kontrol"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "core:window:allow-start-resize-dragging",
+    "core:window:allow-set-ignore-cursor-events",
+    "core:window:allow-set-size",
+    "core:window:allow-set-position",
+    "core:window:allow-minimize",
+    "core:window:allow-unminimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-set-focus",
+    "core:window:allow-set-always-on-top",
+    "core:app:allow-app-show",
+    "opener:default",
+    "global-shortcut:allow-register",
+    "global-shortcut:allow-unregister-all",
+    "global-shortcut:allow-is-registered",
+    "window-state:default"
+  ]
+}
